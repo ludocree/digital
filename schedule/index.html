@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="html" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dictionary</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="handler.js"></script>
+</head>
+<body class="body">
+  <script>
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.body.setAttribute('data-theme', 'dark');
+      } else {
+          document.body.setAttribute('data-theme', 'light');
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+          document.body.setAttribute('data-theme', event.matches ? "dark" : "light");
+      });
+  </script>
+  <div class="page">
+    <div class="search">
+      <div class="search__bar">
+        <div class="search__input-wrapper">
+          <label>
+            <input class="search__input" type="text" spellcheck="false">
+          </label>
+        </div>
+        <div class="search__button-wrapper">
+          <span class="search__button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div class="search__hints"></div>
+    </div>
+    <div class="descriptions"></div>
+  </div>
+</body>
+</html>
